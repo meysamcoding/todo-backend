@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite" // Use SQLite for simplicity; you can change to MySQL or PostgreSQL
+  url      = "file:./dev.db" // Path to your SQLite database
+}
+
+model Task {
+  id          Int      @id @default(autoincrement()) // Auto-incrementing ID
+  title       String   // Title of the task
+  color       String?  // Optional color
+  completed   Boolean  @default(false) // Completion status
+}
